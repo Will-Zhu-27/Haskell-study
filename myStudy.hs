@@ -25,6 +25,22 @@ isEmpty (x:xs) = False
 twice :: (a -> a) -> a -> a
 twice f x = f (f x)
 
+exercise3 :: Char -> Bool
+exercise3 'a' = True
+exercise3 x = False
+
+exercise4 :: String -> Bool
+exercise4 "hello" = True
+exercise4 x = False
+
+exercise5 :: String -> String
+exercise5 (' ':xs) = xs
+exercise5 xs = xs
+
 --p20
 prod :: Integer -> Integer ->Integer
 prod x y = x * y
+
+g = prod 4
+p = g 6
+q = twice g 3
