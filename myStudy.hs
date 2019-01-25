@@ -51,3 +51,13 @@ quadratic a b c =
         x1 = (-b + d) / (2 * a)
         x2 = (-b -d) / (2 * a)
     in (x1, x2)
+
+
+convert :: [Int] -> [Bool] --exercise6
+convert (0:xs) = [False] ++ (convert xs)
+convert (1:xs) = [True] ++ (convert xs)
+convert (x:xs) = convert xs
+convert [] = []
+
+member0 :: String -> Bool --exercise7
+member0 s = or (map (== '0') s)
