@@ -44,3 +44,10 @@ prod x y = x * y
 g = prod 4
 p = g 6
 q = twice g 3
+
+quadratic :: Double -> Double -> Double -> (Double, Double)
+quadratic a b c = 
+    let d = sqrt (b^2 - 4 * a * c)
+        x1 = (-b + d) / (2 * a)
+        x2 = (-b -d) / (2 * a)
+    in (x1, x2)
