@@ -61,3 +61,17 @@ convert [] = []
 
 member0 :: String -> Bool --exercise7
 member0 s = or (map (== '0') s)
+
+
+--data Maybe a = Nothing | Just a --p30
+
+addMaybe :: Maybe Int -> Maybe Int -> Maybe Int --helper of exercise9
+addMaybe Nothing Nothing = Nothing
+addMaybe (Just a) Nothing = Just a
+addMaybe Nothing (Just a) = Just a
+addMaybe (Just a) (Just b) = Just (a + b)
+
+exercise9 :: [Maybe Int] -> [Maybe Int] -> [Maybe Int] --p30
+exercise9 xs ys = zipWith addMaybe xs ys
+
+data Colour = Red | Orange | Yellow | Green | Blue | Violet deriving Show
